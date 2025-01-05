@@ -1,0 +1,435 @@
+
+
+
+
+/* ======= Global Styles ======= */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Space+Grotesk:wght@500&display=swap');
+
+/* Globalni font za ceo sajt*/
+body {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #000000; /* Primer boje */
+  /* padding-top: 0 !important; */
+}
+
+h1 {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3rem; /* Primer veličine */
+  color: #2c2c2c; /* Primer boje */
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  margin: 0; /* Manji razmak između redova */
+} 
+
+/* ======= Global Styles End ======= */
+
+
+/* ======= Custom Mouse Cursor Styles ======= */
+  .custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #bdb2c3;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease, transform 0.1s ease-out;
+  }
+
+  /* Početno sakrivanje kruga */
+  .custom-cursor.hidden {
+    opacity: 0;
+  }
+
+/* ======= Custom Mouse Cursor Styles ======= */
+
+/* ======= Navbar Styles ======= */
+  .navbar {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .navbar-nav {
+    margin-left: auto; /* Pomera sve stavke osim navbar-brand uz desnu ivicu */
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 20px; /* Razmak između stavki */
+  }
+
+  .navbar-nav .nav-link {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link.active {
+    text-decoration: underline; /* Podvlačenje aktivne stavke */
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #bdb2c3;
+  }
+
+  .navbar-nav .button-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    border: 2px solid transparent;
+    transition: all 1s ease;
+  }
+
+  .navbar-nav .button-link:hover {
+    border-color: #000;
+    color: #fff;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: #000;
+    text-decoration: none;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    display: block;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -10px;
+  }
+
+  .navbar-toggler-icon::after {
+    top: 10px;
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon {
+    transform: rotate(0);
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon::before {
+    transform: rotate(0);
+    top: -10px;
+  }
+
+  .navbar-toggler.collapsed .navbar-toggler-icon::after {
+    transform: rotate(0);
+    top: 10px;
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    transform: rotate(45deg);
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    transform: rotate(90deg);
+    top: 0;
+  }
+/* ======= Navbar Styles End======= */
+
+
+/* ======= Intro Section Styles ======= */
+  .intro-section {
+    background-color: #ebeaeb;
+    padding: 50px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .display-4 {
+    font-family: 'Space Grotesk';
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #000000; /* Primer boje */
+    letter-spacing: -0.5px; /* Smanjen razmak između karaktera */
+    line-height: 1.2; /* Smanjen razmak između redova */
+  }
+
+  .lead {
+      font-family: 'Space Grotesk';
+      font-size: 2rem;
+      font-weight: 500;
+      font-style: normal;
+      color: #000000; /* Primer boje */
+      letter-spacing: -0.5px; /* Smanjen razmak između karaktera */
+      line-height: 1.2; /* Smanjen razmak između redova */
+  }
+
+  .btn {
+    background-color: #000000; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+    border: none; /* Remove border */
+    border-radius: 0; /* Rounded corners */
+    font-size: 2rem; /* Font size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block display */
+    transition: background-color 0.9s ease;
+    margin-top: 60px;
+    font-family: "Space Grotesk", serif;
+  }
+
+  .btn:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: all 1s ease;
+  }
+
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding-top: 50px;
+  }
+/* ======= Intro Section Styles End ======= */
+
+
+/* ======= Radna Sekcija ======= */
+.work-method .title { 
+  font-family: 'Space Grotesk', sans-serif; 
+  font-size: 3rem; 
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+
+.work-method .subtitle { 
+  font-family: 'Space Grotesk', sans-serif; 
+  font-size: 2rem;
+  padding-top: 50px;
+} 
+
+.work-method .text { 
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+}
+
+.work-method .img-fluid { 
+  width: auto; 
+  height: 800px; 
+  object-fit: cover;
+  padding: 0;
+  margin: 0; 
+}
+
+.work-method .col-md-6.p-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  
+}
+
+@media (max-width: 767.98px) {
+  .work-method .text-left {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/* ======= Radna sekcija Kraj ======= */
+
+
+/* ======= Slider sekcija ======= */
+
+  .custom-slider-section {
+    background-color: #000; /* Crna pozadina */
+    padding: 80px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .custom-icon-box {
+    color: #fff; /* Bela boja teksta i ikonica */
+  }
+
+  .custom-slider-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff; /* Bela boja teksta */
+  }
+
+  .custom-slider-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #ccc; /* Svetlija boja teksta */
+  }
+
+  .custom-icon-img {
+    size: 50px;
+    color: #fff; /* Bela boja ikonica */
+    margin-bottom: 20px;
+  }
+
+  .customSwiper {
+    width: 100%;
+    padding: 0; /* Uklanjanje paddinga */
+    margin: 0; /* Uklanjanje margina */
+  }
+
+  .customSwiper .swiper-wrapper {
+    width: 100%; /* Osiguranje da wrapper ide preko cele širine prozora */
+  }
+
+  .customSwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3); /* Prikazuje 3 slajda odjednom */
+  }
+
+/* ======= Slider sekcija kraj ======= */
+
+/* ======= Slideshow siteova sekcija ======= */
+  .custom-swiper-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .custom-swiper-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: #000000; /* Bela boja teksta */
+    padding-bottom: 20px;
+  }
+
+  .custom-swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custom-swiper-img {
+    width: 100%;
+    height: 100%; /* Održava proporcije slike */
+    object-fit: cover; /* Održava proporcije slike unutar kontejnera */
+  }
+
+  .custom-swiper-button-prev,
+  .custom-swiper-button-next {
+    color: #fff; /* Bela boja za navigacione dugmiće */
+  }
+
+/* ======= Slideshow siteova sekcija kraj ======= */
+
+
+/* ======= Footer sekcija ======= */
+  .custom-footer {
+    background-color: #bdb2c3; /* Pozadinska boja */
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000; /* Crna boja teksta */
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: left; /* Levo poravnanje teksta */
+  }
+
+  .footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centriranje stavki */
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Levo poravnanje stavki */
+    text-align: left; /* Levo poravnanje teksta */
+  }
+
+  .footer-right h3 {
+    font-family: 'Space Grotesk';
+    font-style: bold;
+    margin: 0;
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .footer-link {
+    color: #000; /* Crna boja linka */
+    text-decoration: none; /* Bez podvlačenja */
+  }
+  
+  .footer-link:hover {
+    font-size: larger;
+  }
+/* ======= Footer sekcija kraj ======= */
+
+
