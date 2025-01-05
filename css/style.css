@@ -1,4 +1,13 @@
+/* ======= Sadržaj CSS fajla =======
 
+ * Global Styles - linija 3
+ * Custom Mouse Cursor Styles - linija 23
+ * Navbar Styles - linija 43
+ * Radna Sekcija - linija 115
+ * Slideshow siteova sekcija - linija 247
+ * Footer sekcija - linija 340
+ 
+ * ======= Kraj Sadržaja ======= */
 
 
 
@@ -16,19 +25,29 @@ body {
 }
 
 h1 {
-  font-family: "Space Grotesk", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-size: 3rem; /* Primer veličine */
   color: #2c2c2c; /* Primer boje */
+  letter-spacing: -2px;
 }
 
 p {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   margin: 0; /* Manji razmak između redova */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease;
 } 
+
+/* Klasa koja se dodaje kada je element u vidljivosti */
+p.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ======= Global Styles End ======= */
 
@@ -116,21 +135,21 @@ p {
     border: none;
     background: transparent;
   }
-
+  
   .navbar-toggler:focus {
     outline: none;
     box-shadow: none;
   }
-
+  
   .navbar-toggler-icon {
     width: 30px;
     height: 3px;
     background-color: #000;
     display: block;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 1s ease; /* Smanjena tranzicija za brži efekat */
   }
-
+  
   .navbar-toggler-icon::before,
   .navbar-toggler-icon::after {
     content: '';
@@ -139,40 +158,40 @@ p {
     background-color: #000;
     display: block;
     position: absolute;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
   }
-
+  
   .navbar-toggler-icon::before {
     top: -10px;
   }
-
+  
   .navbar-toggler-icon::after {
     top: 10px;
   }
-
+  
   .navbar-toggler.collapsed .navbar-toggler-icon {
     transform: rotate(0);
   }
-
+  
   .navbar-toggler.collapsed .navbar-toggler-icon::before {
     transform: rotate(0);
     top: -10px;
   }
-
+  
   .navbar-toggler.collapsed .navbar-toggler-icon::after {
     transform: rotate(0);
     top: 10px;
   }
-
+  
   .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
     transform: rotate(45deg);
   }
-
+  
   .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
     transform: rotate(90deg);
     top: 0;
   }
-
+  
   .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
     transform: rotate(90deg);
     top: 0;
@@ -212,8 +231,8 @@ p {
     background-color: #000000; /* Dark background color */
     color: #fff; /* White text color */
     padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
     
     border: none; /* Remove border */
     border-radius: 0; /* Rounded corners */
@@ -294,7 +313,6 @@ p {
     background-color: #000; /* Crna pozadina */
     padding: 80px 0;
     text-align: center;
-    width: 100%;
   }
 
   .custom-icon-box {
@@ -312,10 +330,12 @@ p {
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     color: #ccc; /* Svetlija boja teksta */
+    margin-top: 5px;
   }
 
   .custom-icon-img {
-    size: 50px;
+    width: 50px; /* Fiksna širina */
+    height: 50px; /* Fiksna visina */
     color: #fff; /* Bela boja ikonica */
     margin-bottom: 20px;
   }
@@ -324,6 +344,7 @@ p {
     width: 100%;
     padding: 0; /* Uklanjanje paddinga */
     margin: 0; /* Uklanjanje margina */
+    align-items: center;
   }
 
   .customSwiper .swiper-wrapper {
@@ -334,7 +355,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% / 3); /* Prikazuje 3 slajda odjednom */
+    /* width: calc(100% / 3); */
+    height: auto;
   }
 
 /* ======= Slider sekcija kraj ======= */
@@ -372,7 +394,7 @@ p {
 
   .custom-swiper-img {
     width: 100%;
-    height: 100%; /* Održava proporcije slike */
+    height: 100%;
     object-fit: cover; /* Održava proporcije slike unutar kontejnera */
   }
 
@@ -383,35 +405,271 @@ p {
 
 /* ======= Slideshow siteova sekcija kraj ======= */
 
+/* ===== Solutions Section Styles ===== */
+.solutions-section {
+  background-color: #f9f9f9;
+}
+
+.solution-section-container {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+
+.solutions-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 40px;
+}
+
+.solution-card {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  /* manja senka */
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  */
+  /* veca senka */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  
+}
+
+.solution-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 40px;
+}
+
+.solution-text {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 40px;
+}
+
+.solution-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  margin: 40px;
+}
+
+.solution-link:hover {
+  text-decoration: underline;
+}
+/* ===== Solutions Section Styles End ===== */
+
+/* ======= Schedule Meeting Section ======= */
+.schedule-meeting .title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  padding-bottom: 20px;
+  margin-top: 30px;
+}
+
+.schedule-meeting .text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.schedule-meeting .form-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.schedule-meeting .form-control {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+.schedule-meeting .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.schedule-meeting .col-md-6.p-4 {
+  background-color: #bdb2c3; /* Pozadinska boja */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px; /* Prostor oko teksta */
+  color: #fff; /* Bela boja teksta za bolji kontrast */
+  border-top: 2px solid #000;
+}
+
+.schedule-meeting .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.schedule-meeting .btn:hover {
+  background-color: #0056b3;
+}
+
+.schedule-meeting .img-fluid {
+  width: auto;
+  height: 800px;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+  border-top: 2px solid #000;
+}
+
+@media (max-width: 767.98px) {
+  .schedule-meeting .text-left {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/* ======= Schedule Meeting Section End ======= */
+
+/* ======= FAQ Section ======= */
+/* ======= FAQ Section ======= */
+.faq-section {
+  padding: 50px 20px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.faq-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.faq-subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-container {
+  padding-left: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+  display: flex;
+  color: #000000;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: -2px;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1.5rem;
+  transition: max-height 0.5s ease-out, padding 1s ease-out;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* Adjust based on content */
+  padding-top: 10px;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  transition: transform 2s ease;
+}
+
+.faq-toggle.open {
+  transform: rotate(45deg);
+}
+
+.faq-toggle:hover {
+  color: #000;
+}
+
+hr {
+  border: none; /* Uklanja default border */
+  height: 2px; /* Visina linije */
+  background-color: #000; /* Crna boja */
+  margin: 10px 0; /* Margina iznad i ispod linije */
+}
+
+.faq-image {
+  position: relative;
+  max-width: 70%;
+  padding: 0 40px;
+  border-radius: 1000px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* ======= FAQ Section End ======= */
 
 /* ======= Footer sekcija ======= */
   .custom-footer {
-    background-color: #bdb2c3; /* Pozadinska boja */
+    background-color: #bdb2c3;
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #000; /* Crna boja teksta */
+    color: #000;
   }
 
   .footer-left,
   .footer-right {
-    text-align: left; /* Levo poravnanje teksta */
+    text-align: left;
   }
 
   .footer-left {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centriranje stavki */
+    align-items: center;
   }
 
   .footer-right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Levo poravnanje stavki */
-    text-align: left; /* Levo poravnanje teksta */
+    align-items: flex-start; 
+    text-align: left; 
   }
 
   .footer-right h3 {
@@ -423,8 +681,8 @@ p {
   }
 
   .footer-link {
-    color: #000; /* Crna boja linka */
-    text-decoration: none; /* Bez podvlačenja */
+    color: #000; 
+    text-decoration: none; 
   }
   
   .footer-link:hover {
