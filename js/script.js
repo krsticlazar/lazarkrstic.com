@@ -104,6 +104,21 @@ document.addEventListener("DOMContentLoaded", function() {
         customCursor.classList.add('hidden');
         customCursorInner.classList.add('hidden');
     });
+
+    // Onemogući kursor na mobilnim uređajima
+    function disableCustomCursorOnMobile() {
+        if (window.innerWidth <= 767.98) {
+            customCursor.style.display = 'none';
+            customCursorInner.style.display = 'none';
+        } else {
+            customCursor.style.display = 'block';
+            customCursorInner.style.display = 'block';
+        }
+    }
+
+    // Pozovi funkciju pri učitavanju stranice i promeni veličine prozora
+    disableCustomCursorOnMobile();
+    window.addEventListener('resize', disableCustomCursorOnMobile);
     // #endregion Custom Cursor
 
     // #region Fade-in efekat za p elemente
