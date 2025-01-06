@@ -759,6 +759,12 @@ hr {
   .order-btn:hover {
     background: linear-gradient(to left, #ffffff, #bdb2c3);
   }
+
+  @media screen and (max-width: 767.98px) {
+      .card-title {
+        font-size: 2rem;
+      }   
+    }
 /* #endregion */
 
 /* #region Contact Form Style */
