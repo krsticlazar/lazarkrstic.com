@@ -1,17 +1,5 @@
-/* ======= Sadržaj CSS fajla =======
 
- * Global Styles - linija 3
- * Custom Mouse Cursor Styles - linija 23
- * Navbar Styles - linija 43
- * Radna Sekcija - linija 115
- * Slideshow siteova sekcija - linija 247
- * Footer sekcija - linija 340
- 
- * ======= Kraj Sadržaja ======= */
-
-
-
-/* ======= Global Styles ======= */
+/* #region Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Space+Grotesk:wght@500&display=swap');
 
 /* Globalni font za ceo sajt*/
@@ -49,30 +37,41 @@ p.fade-in {
   transform: translateY(0);
 }
 
-/* ======= Global Styles End ======= */
+/* #endregion */
 
+/* #region Custom Mouse Cursor Styles */
+    .custom-cursor {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #bdb2c3;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.3s ease, transform 0.1s ease-out;
+    }
 
-/* ======= Custom Mouse Cursor Styles ======= */
-  .custom-cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #bdb2c3;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: background-color 0.3s ease, transform 0.1s ease-out;
-  }
+    .custom-cursor-inner {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+    }
+    
+    .custom-cursor.hidden,
+    .custom-cursor-inner.hidden {
+      opacity: 0;
+    }
 
-  /* Početno sakrivanje kruga */
-  .custom-cursor.hidden {
-    opacity: 0;
-  }
+/* #endregion */
 
-/* ======= Custom Mouse Cursor Styles ======= */
-
-/* ======= Navbar Styles ======= */
+/* #region Navbar Styles */
   .navbar {
     background-color: #fff;
     padding: 20px;
@@ -86,7 +85,7 @@ p.fade-in {
     text-decoration: none;
     color: #000;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 17px;
   }
 
   .navbar-nav {
@@ -119,7 +118,7 @@ p.fade-in {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     border: 2px solid transparent;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
   }
 
   .navbar-nav .button-link:hover {
@@ -147,7 +146,7 @@ p.fade-in {
     background-color: #000;
     display: block;
     position: relative;
-    transition: all 1s ease; /* Smanjena tranzicija za brži efekat */
+    transition: all 0.3s ease; /* Smanjena tranzicija za brži efekat */
   }
   
   .navbar-toggler-icon::before,
@@ -158,7 +157,7 @@ p.fade-in {
     background-color: #000;
     display: block;
     position: absolute;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
   }
   
   .navbar-toggler-icon::before {
@@ -166,20 +165,6 @@ p.fade-in {
   }
   
   .navbar-toggler-icon::after {
-    top: 10px;
-  }
-  
-  .navbar-toggler.collapsed .navbar-toggler-icon {
-    transform: rotate(0);
-  }
-  
-  .navbar-toggler.collapsed .navbar-toggler-icon::before {
-    transform: rotate(0);
-    top: -10px;
-  }
-  
-  .navbar-toggler.collapsed .navbar-toggler-icon::after {
-    transform: rotate(0);
     top: 10px;
   }
   
@@ -196,10 +181,9 @@ p.fade-in {
     transform: rotate(90deg);
     top: 0;
   }
-/* ======= Navbar Styles End======= */
+/* #endregion */
 
-
-/* ======= Intro Section Styles ======= */
+/* #region Intro Section Styles */
   .intro-section {
     background-color: #ebeaeb;
     padding: 50px;
@@ -260,10 +244,9 @@ p.fade-in {
     object-fit: cover;
     padding-top: 50px;
   }
-/* ======= Intro Section Styles End ======= */
+/* #endregion */
 
-
-/* ======= Radna Sekcija ======= */
+/* #region Work Method Styles */
 .work-method .title { 
   font-family: 'Space Grotesk', sans-serif; 
   font-size: 3rem; 
@@ -304,19 +287,19 @@ p.fade-in {
     padding-right: 15px;
   }
 }
-/* ======= Radna sekcija Kraj ======= */
+/* #endregion */
 
-
-/* ======= Slider sekcija ======= */
+/* #region Slider Styles */
 
   .custom-slider-section {
     background-color: #000; /* Crna pozadina */
     padding: 80px 0;
     text-align: center;
+    height: auto;
   }
 
   .custom-icon-box {
-    color: #fff; /* Bela boja teksta i ikonica */
+    color: #fff; /* Bela boja ikonica */
   }
 
   .custom-slider-title {
@@ -334,10 +317,10 @@ p.fade-in {
   }
 
   .custom-icon-img {
-    width: 50px; /* Fiksna širina */
-    height: 50px; /* Fiksna visina */
+    width: 90px; /* Fiksna širina */
+    height: 90px; /* Fiksna visina */
     color: #fff; /* Bela boja ikonica */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .customSwiper {
@@ -349,27 +332,26 @@ p.fade-in {
 
   .customSwiper .swiper-wrapper {
     width: 100%; /* Osiguranje da wrapper ide preko cele širine prozora */
+    height: auto; /* Visina se prilagođava sadržaju */
   }
 
   .customSwiper .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: calc(100% / 3); */
+    width: calc(100% / 3);
     height: auto;
   }
 
-/* ======= Slider sekcija kraj ======= */
+/* #endregion*/
 
-/* ======= Slideshow siteova sekcija ======= */
+/* #region Slideshow Style */
   .custom-swiper-container {
     width: 100%;
     height: auto;
     overflow: hidden;
     padding-top: 50px;
     padding-bottom: 50px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
   }
 
   .custom-swiper-text {
@@ -378,7 +360,8 @@ p.fade-in {
     font-weight: 500;
     text-align: center;
     color: #000000; /* Bela boja teksta */
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 50px;
   }
 
   .custom-swiper-wrapper {
@@ -403,9 +386,9 @@ p.fade-in {
     color: #fff; /* Bela boja za navigacione dugmiće */
   }
 
-/* ======= Slideshow siteova sekcija kraj ======= */
+/* #endregion*/
 
-/* ===== Solutions Section Styles ===== */
+/* #region Solutions Section Styles */
 .solutions-section {
   background-color: #f9f9f9;
 }
@@ -420,8 +403,8 @@ p.fade-in {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 4rem;
   font-weight: 500;
-  color: #333;
-  padding-bottom: 40px;
+  color: #000000;
+  padding: 60px;
 }
 
 .solution-card {
@@ -455,7 +438,7 @@ p.fade-in {
 }
 
 .solution-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #666;
   margin: 40px;
 }
@@ -471,9 +454,9 @@ p.fade-in {
 .solution-link:hover {
   text-decoration: underline;
 }
-/* ===== Solutions Section Styles End ===== */
+/* #endregion */
 
-/* ======= Schedule Meeting Section ======= */
+/* #region Schedule Meeting Section Style */
 .schedule-meeting .title {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 3rem;
@@ -548,10 +531,9 @@ p.fade-in {
     padding-right: 15px;
   }
 }
-/* ======= Schedule Meeting Section End ======= */
+/* #endregion */
 
-/* ======= FAQ Section ======= */
-/* ======= FAQ Section ======= */
+/* #region FAQ Section Style ======= */
 .faq-section {
   padding: 50px 20px;
   border-top: 2px solid #000;
@@ -640,9 +622,42 @@ hr {
   overflow: hidden;
 }
 
-/* ======= FAQ Section End ======= */
+/* #endregion */
 
-/* ======= Footer sekcija ======= */
+/* #region Instagram Section Style */
+
+.instagram-section {
+  background-color: #bdb2c3;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+}
+
+.instagram-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: none; /* Uklanja podvlačenje linka */
+  color: inherit; /* Nasleđuje boju teksta */
+  transition: transform 0.3s ease; /* Dodavanje tranzicije za hover efekat */
+}
+
+.instagram-title:hover {
+  transform: scale(1.1); /* Blago uvećanje teksta prilikom hovera */
+}
+
+.instagram-embed iframe {
+  border-radius: 10px;
+  max-width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+/* #endregion */
+
+/* #region Footer Section Style */
   .custom-footer {
     background-color: #bdb2c3;
     padding: 30px;
@@ -688,6 +703,4 @@ hr {
   .footer-link:hover {
     font-size: larger;
   }
-/* ======= Footer sekcija kraj ======= */
-
-
+/* #endregion */

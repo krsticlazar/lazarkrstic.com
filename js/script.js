@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    //#region Navbar
     var navbar = document.querySelector('.navbar');
     var body = document.body;
 
@@ -14,8 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (orderLink && currentPath === 'order.html') {
         orderLink.classList.add('active');
     }
+    //#endregion Navbar
 
-    // Swiper initialization
+    // #region Swiper initialization
     const customSwiper = new Swiper('.customSwiper', {
         loop: true, // Infinite scrolling
         speed: 1000,
@@ -26,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
         slidesPerView: 3, // Display 3 slides at a time
         spaceBetween: 30, // Space between slides
     });
+    // #endregion Swiper initialization
 
+    // #region Swiper initialization
     var mySwiper = new Swiper('.swiper-container', {
         loop: true,
         speed: 1000,
@@ -52,25 +57,32 @@ document.addEventListener("DOMContentLoaded", function() {
             prevEl: '.swiper-button-prev',
         },
     });
+    // #endregion Swiper initialization
 
-    // Custom cursor
+    // #region Custom Cursor
     const customCursor = document.querySelector('.custom-cursor');
+    const customCursorInner = document.querySelector('.custom-cursor-inner');
     let cursorX = 0, cursorY = 0;
     let delayX = 0, delayY = 0;
+    let innerDelayX = 0, innerDelayY = 0;
 
     // Funkcija za pomeranje kursora
     document.addEventListener('mousemove', function(event) {
         cursorX = event.clientX;
         cursorY = event.clientY;
         customCursor.classList.remove('hidden'); // Prikaži krug
+        customCursorInner.classList.remove('hidden'); // Prikaži manji krug
     });
 
     // Funkcija za kašnjenje pri praćenju miša
     function followCursor() {
         delayX += (cursorX - delayX) * 0.1; // Podešavanje kašnjenja
         delayY += (cursorY - delayY) * 0.1;
+        innerDelayX += (cursorX - innerDelayX) * 0.2; // Brže kašnjenje za manji krug
+        innerDelayY += (cursorY - innerDelayY) * 0.2;
 
         customCursor.style.transform = `translate(${delayX}px, ${delayY}px)`;
+        customCursorInner.style.transform = `translate(${innerDelayX}px, ${innerDelayY}px)`;
         requestAnimationFrame(followCursor); // Ponavljanje animacije
     }
     followCursor();
@@ -78,9 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Sakrij krug kada je miš van stranice
     document.addEventListener('mouseleave', function() {
         customCursor.classList.add('hidden');
+        customCursorInner.classList.add('hidden');
     });
+    // #endregion Custom Cursor
 
-    // Fade-in efekat za p elemente
+    // #region Fade-in efekat za p elemente
     const paragraphs = document.querySelectorAll("p");
 
     const observer = new IntersectionObserver(
@@ -100,8 +114,9 @@ document.addEventListener("DOMContentLoaded", function() {
     paragraphs.forEach(p => {
         observer.observe(p);
     });
-
-    // FAQ toggle
+    // #endregion Fade-in efekat za p elemente
+    
+    // #region FAQ toggle
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach(question => {
@@ -123,4 +138,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+    // #endregion FAQ toggle
 });
