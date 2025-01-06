@@ -38,6 +38,112 @@
       </div>
     </nav>
 
+    <!-- Hero sekcija -->
+    <section class="order-design-section container-fluid py-5">
+      <div class="row justify-content-center">
+        <!-- Kartica 1: Poruči Dizajn -->
+        <div class="col-md-4">
+          <div class="card order-card">
+            <h3 class="card-title">Poruči Dizajn</h3>
+            <ul class="card-features">
+              <li><i class="fa fa-check"></i> Personalizovani dizajn</li>
+              <li><i class="fa fa-check"></i> Premium grafički radovi</li>
+              <li><i class="fa fa-check"></i> Usklađivanje sa brendom</li>
+              <li><i class="fa fa-check"></i> Brza isporuka</li>
+              <li><a href="https://www.instagram.com/krledesign/" target="_blank">Pogledaj primere</a></li>
+            </ul>
+            <button class="btn order-btn" data-subject="design">Poruči Dizajn</button>
+          </div>
+        </div>
+
+        <!-- Kartica 2: Poruči Sajt -->
+        <div class="col-md-4">
+          <div class="card order-card">
+            <h3 class="card-title">Poruči Sajt</h3>
+            <ul class="card-features">
+              <li><i class="fa fa-check"></i> Moderan i funkcionalan dizajn</li>
+              <li><i class="fa fa-check"></i> Mobilna verzija</li>
+              <li><i class="fa fa-check"></i> SEO optimizacija</li>
+              <li><i class="fa fa-check"></i> Hosting uključeno</li>
+              <li><a href="projects.html">Pogledaj primere</a></li>
+            </ul>
+            <button class="btn order-btn" data-subject="website">Poruči Sajt</button>
+          </div>
+        </div>
+
+        <!-- Kartica 3: Poruči Combo -->
+        <div class="col-md-4">
+          <div class="card order-card">
+            <h3 class="card-title">Poruči Combo</h3>
+            <ul class="card-features">
+              <li><i class="fa fa-check"></i> Kompletno rešenje</li>
+              <li><i class="fa fa-check"></i> Premium dizajn i sajt</li>
+              <li><i class="fa fa-check"></i> Upravljanje sadržajem</li>
+              <li><i class="fa fa-check"></i> Garancija kvaliteta</li>
+              <li><a href="projects.html">Pogledaj primere</a></li>
+            </ul>
+            <button class="btn order-btn" data-subject="combo">Poruči Sve</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <section id="contact-form" class="contact-form-section container-fluid py-5">
+      <div class="row align-items-center">
+        <!-- Leva strana: Logo -->
+        <div class="col-md-4 text-center">
+          <img src="assets/icon.png" alt="Logo" class="contact-logo" />
+        </div>
+    
+        <!-- Desna strana: Forma -->
+        <div class="col-md-8">
+          <div class="form-container">
+            <h2 class="form-heading">Kontaktirajte nas</h2>
+            <form>
+              <div class="row">
+                <!-- Ime -->
+                <div class="col-md-6 form-group">
+                  <label for="name">Ime*</label>
+                  <input type="text" class="form-control" id="name" placeholder="Vaše ime" required />
+                </div>
+                <!-- Email -->
+                <div class="col-md-6 form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control" id="email" placeholder="Vaša email adresa" required />
+                </div>
+              </div>
+              <div class="row">
+                <!-- Broj telefona -->
+                <div class="col-md-6 form-group">
+                  <label for="phone">Broj telefona</label>
+                  <input type="text" class="form-control" id="phone" placeholder="Vaš broj telefona" />
+                </div>
+                <!-- Tema -->
+                <div class="col-md-6 form-group">
+                  <label for="subject">Tema*</label>
+                  <select class="form-control" id="subject" required>
+                    <option value="" disabled selected>Tema</option>
+                    <option value="design">Dizajn</option>
+                    <option value="website">Sajt</option>
+                    <option value="combo">Combo</option>
+                    <option value="other">Ostalo</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Poruka -->
+              <div class="form-group">
+                <label for="message">Vaša poruka*</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Napišite poruku..." required></textarea>
+              </div>
+              <!-- Dugme -->
+              <button type="submit" class="btn submit-btn">Pošaljite</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="custom-footer">
       <div class="footer-left">

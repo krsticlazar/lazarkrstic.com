@@ -25,9 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
         autoplay: {
             delay: 4000,
         },
-        grabCursor: true, // Drag/swipe with mouse
-        slidesPerView: 3, // Display 3 slides at a time
-        spaceBetween: 30, // Space between slides
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            767: {
+                slidesPerView: 3, 
+                spaceBetween: 10,
+            }
+        }
     });
     // #endregion Swiper initialization
 
@@ -41,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: '3',
+        slidesPerView: '2',
         spaceBetween: 0, // Razmak između slajdova
         coverflowEffect: {
             rotate: 0,
@@ -49,6 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
             depth: 200,
             modifier: 1,
             slideShadows: false,
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 3, 
+                spaceBetween: 10,
+            }
         },
     
         // Navigation arrows
@@ -139,4 +151,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     // #endregion FAQ toggle
+
+    // #region Contact form
+    const orderButtons = document.querySelectorAll('.order-btn');
+    const subjectSelect = document.getElementById('subject');
+    const contactFormSection = document.getElementById('contact-form');
+
+    orderButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const subjectValue = this.getAttribute('data-subject');
+        subjectSelect.value = subjectValue;
+
+        // Scroll to contact form
+        contactFormSection.scrollIntoView({ behavior: 'smooth' });
+    });
+    });
+    //#endregion Contact form
 });
