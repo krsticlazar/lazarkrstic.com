@@ -182,4 +182,40 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     });
     //#endregion Contact form
+
+    // #region RemoveHtml
+    // Kada korisnik klikne na neku sekciju, menjamo URL
+    document.querySelector("#orderDesign").addEventListener("click", function () {
+        // Menja URL na www.lazarkrstic.com/orders bez reload-a
+        window.history.pushState({}, "", "/orders");
+
+        // Učitaj sadržaj dinamički
+        loadContent("/orders");
+    });
+
+    // Funkcija za dinamičko učitavanje sadržaja
+    function loadContent(page) {
+        let pageUrl = "";
+        if (page === "/orders") {
+            pageUrl = "orders.html";
+        } else if (page === "/projects") {
+            pageUrl = "projects.html";
+        } else {
+            pageUrl = "index.html";
+        }
+
+        fetch(pageUrl)
+            .then((response) => response.text())
+            .then((html) => {
+                document.querySelector("#content").innerHTML = html;
+            });
+    }
+
+    window.addEventListener("popstate", function () {
+        // Dinamički učitava stranicu na osnovu trenutnog URL-a
+        const path = window.location.pathname;
+        loadContent(path);
+    });
+// #endregion RemoveHtml
+
 });
