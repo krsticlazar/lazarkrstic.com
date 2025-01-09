@@ -761,10 +761,10 @@ hr {
   }
 
   @media screen and (max-width: 767.98px) {
-      .card-title {
-        font-size: 2rem;
-      }   
-    }
+    .card-title {
+      font-size: 2rem;
+    }   
+  }
 /* #endregion */
 
 /* #region Contact Form Style */
@@ -874,49 +874,58 @@ hr {
 /* #endregion */
 
 /* #region Footer Section Style */
-  .custom-footer {
-    background-color: #bdb2c3;
-    padding: 30px;
-    display: flex;
-    flex-direction: row; /* Postavlja elemente u red na većim ekranima */
-    justify-content: space-between; /* Razmak između elemenata */
+.custom-footer {
+  background-color: #bdb2c3;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column; /* Postavlja elemente jedan ispod drugog */
+  align-items: center;
+  color: #000;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Razmak između levog i desnog dela */
+  width: 80%; /* Smanjuje širinu footer-content kako bi elementi bili bliže jedan drugom */
+  padding: 0 20px; /* Horizontalni padding */
+  z-index: 1; /* Osigurava da je sadržaj iznad slike */
+}
+
+.footer-left {
+  text-align: left; 
+  padding: 30px;
+}
+
+.footer-right {
+  text-align: right;
+  padding: 30px;
+}
+
+.footer-image {
+  width: 100%; /* Osigurava da slika zauzima celu širinu */
+}
+
+.footer-image img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  opacity: 0.2;
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 767.98px) {
+  .footer-content {
+    flex-direction: column; /* Postavlja elemente jedan ispod drugog na manjim ekranima */
     align-items: center;
-    color: #000;
+    text-align: center; /* Centriranje teksta */
+    width: 100%; /* Vraća širinu na 100% za manje ekrane */
+    padding: 10px;
   }
 
   .footer-left,
   .footer-right {
-    text-align: center; /* Centriranje teksta */
-    width: 45%; /* Osigurava da elementi zauzimaju skoro polovinu širine */
-    /* margin-bottom: 20px; */
-  }
-
-  .footer-right h3 {
-    font-family: 'Space Grotesk';
-    font-weight: bold;
-    margin: 0;
-    margin-top: 20px;
+    width: 100%; /* Osigurava da elementi zauzimaju celu širinu na manjim ekranima */
     text-align: center; /* Centriranje teksta */
   }
-
-  .footer-link {
-    color: #000; 
-    text-decoration: none; 
-  }
-
-  .footer-link:hover {
-    font-size: larger;
-  }
-
-  /* Media query za manje ekrane */
-  @media (max-width: 767.98px) {
-    .custom-footer {
-      flex-direction: column; /* Postavlja elemente jedan ispod drugog na manjim ekranima */
-    }
-
-    .footer-left,
-    .footer-right {
-      width: 100%; /* Osigurava da elementi zauzimaju celu širinu na manjim ekranima */
-    }
-  }
+}
 /* #endregion */
