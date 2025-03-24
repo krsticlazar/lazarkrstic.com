@@ -100,29 +100,31 @@
         <div class="col-md-8">
           <div class="form-container">
             <h2 class="form-heading">Kontaktirajte nas</h2>
-            <form>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="a82c803b-9de8-4d1c-83b5-ed496b035e19">
+              
               <div class="row">
                 <!-- Ime -->
                 <div class="col-md-6 form-group">
                   <label for="name">Ime*</label>
-                  <input type="text" class="form-control" id="name" placeholder="Vaše ime" required />
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Vaše ime" required />
                 </div>
                 <!-- Email -->
                 <div class="col-md-6 form-group">
                   <label for="email">Email*</label>
-                  <input type="email" class="form-control" id="email" placeholder="Vaša email adresa" required />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Vaša email adresa" required />
                 </div>
               </div>
               <div class="row">
                 <!-- Broj telefona -->
                 <div class="col-md-6 form-group">
                   <label for="phone">Broj telefona</label>
-                  <input type="text" class="form-control" id="phone" placeholder="Vaš broj telefona" />
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Vaš broj telefona" />
                 </div>
                 <!-- Tema -->
                 <div class="col-md-6 form-group">
                   <label for="subject">Tema*</label>
-                  <select class="form-control" id="subject" required>
+                  <select class="form-control" name="subject" id="subject" required>
                     <option value="" disabled selected>Tema</option>
                     <option value="design">Dizajn</option>
                     <option value="website">Sajt</option>
@@ -134,10 +136,13 @@
               <!-- Poruka -->
               <div class="form-group">
                 <label for="message">Vaša poruka*</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Napišite poruku..." required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="4" placeholder="Napišite poruku..." required></textarea>
               </div>
               <!-- Dugme -->
               <button type="submit" class="btn submit-btn">Pošaljite</button>
+              
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             </form>
           </div>
         </div>
